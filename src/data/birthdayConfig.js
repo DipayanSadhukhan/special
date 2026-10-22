@@ -34,8 +34,8 @@ const birthdayConfig = {
     { text: 'পৃথিবীর সব সুখ তোমার উঠান ভরিয়ে দিক...',          source: null },
   ],
 
-  momentsTitle:    'Our Little Moments',
-  momentsSubtitle: 'Some moments are too beautiful to be forgotten.',
+  momentsTitle:    'কিছু মুহূর্ত সমূহ',
+  momentsSubtitle: '',
 
   timelineTitle:    'আজ পর্যন্ত',
   timelineSubtitle: 'কিছু ছোট ছোট মুহূর্ত... ',
@@ -49,7 +49,7 @@ const birthdayConfig = {
 
   music: {
     src:   '/music/birthday-song.mp3',
-    title: 'Our Song',
+    title: 'Music',
   },
 
   letterTitle: 'সব শেষে...',

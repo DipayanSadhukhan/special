@@ -136,7 +136,7 @@ export default function MusicPlayer({
             onClick={() => setExpanded((v) => !v)}
             className="text-cream/30 hover:text-cream/60 transition-colors text-xs"
           >
-            {expanded ? "▲" : "▼"}
+            {/* {expanded ? "▲" : "▼"} */}
           </button>
         </div>
         <AnimatePresence>
