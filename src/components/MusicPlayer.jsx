@@ -87,7 +87,7 @@ export default function MusicPlayer({
       className="fixed bottom-5 right-5 z-40"
       style={{ maxWidth: expanded ? 280 : "auto" }}
     >
-      <audio ref={audioRef} src={config.music.src} preload="metadata" />
+      <audio ref={audioRef} src={config.music.src} preload="metadata" loop />
       <div
         className="glass rounded-2xl overflow-hidden"
         style={{ border: "1px solid rgba(201,168,76,0.2)" }}
