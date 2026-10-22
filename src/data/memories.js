@@ -114,7 +114,7 @@ const memories = [
     id: 14,
     image: "https://i.ibb.co/Fbp9kcn1/IMG-20261005-WA0020.jpg",
     date: "অজানা ",
-    caption: "ভাবনায় ব্যাস্ত সখি... ",
+    caption: "চলভাসে ব্যাস্ত সখি... ",
     type: "small",
   },
   {
