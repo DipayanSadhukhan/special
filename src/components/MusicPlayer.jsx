@@ -34,6 +34,43 @@ export default function MusicPlayer({
     if (audioRef.current) audioRef.current.volume = volume;
   }, [volume, audioRef]);
 
+  // useEffect(() => {
+  //   const el = audioRef.current;
+  //   if (!el) return;
+  //   const onTime = () => setProgress(el.currentTime);
+  //   const onMeta = () => setDuration(el.duration || 0);
+  //   const onEnded = () => {
+  //     setIsPlaying(false);
+  //     setProgress(0);
+  //   };
+  //   el.addEventListener("timeupdate", onTime);
+  //   el.addEventListener("loadedmetadata", onMeta);
+  //   el.addEventListener("ended", onEnded);
+  //   return () => {
+  //     el.removeEventListener("timeupdate", onTime);
+  //     el.removeEventListener("loadedmetadata", onMeta);
+  //     el.removeEventListener("ended", onEnded);
+  //   };
+  // }, [audioRef, setIsPlaying]);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+
+    el.play()
+      .then(() => {
+        setIsPlaying(true);
+      })
+      .catch((error) => {
+        console.log("Autoplay prevented:", error);
+        setIsPlaying(false);
+      });
+  }, [audioRef, setIsPlaying]);
+
+  useEffect(() => {
+    if (audioRef.current) audioRef.current.volume = volume;
+  }, [volume, audioRef]);
+
   useEffect(() => {
     const el = audioRef.current;
     if (!el) return;
@@ -87,7 +124,7 @@ export default function MusicPlayer({
       className="fixed bottom-5 right-5 z-40"
       style={{ maxWidth: expanded ? 280 : "auto" }}
     >
-      <audio ref={audioRef} src={config.music.src} preload="metadata" loop />
+      <audio ref={audioRef} src={config.music.src} preload="metadata" autoplay loop />
       <div
         className="glass rounded-2xl overflow-hidden"
         style={{ border: "1px solid rgba(201,168,76,0.2)" }}
